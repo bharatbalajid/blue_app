@@ -33,15 +33,15 @@ stages {
       sh 'terraform plan'
     }
   }
+  parallel {
   stage('Aprroval') {
       options {
           timeout(time: 5, unit: 'MINUTES')
       }
-    parallel(
-       {
+    steps {
       input "Do you want to apply the plan?"
     }
-    )
+  }
   }
     stage('Terraform Apply') {
     steps {
