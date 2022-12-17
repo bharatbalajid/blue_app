@@ -48,8 +48,9 @@ stages {
   }
  stage('Destroy Approval') {
      options {
-         timeout(time: 300, unit: 'MINUTES')  
-   steps {
+         timeout(time: 300, unit: 'MINUTES') 
+     } 
+    steps {
       input 'Do you want to destroy the resources created ?'
     }
   }
@@ -60,4 +61,4 @@ stages {
   }
 }
 }
-}
+
