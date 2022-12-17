@@ -49,11 +49,11 @@ stages {
  stage('Destroy Approval') {
      options {
          timeout(time: 300, unit: 'MINUTES')  
+     }
     steps {
       input 'Do you want to destroy the resources created ?'
     }
   }
- }
  stage('Terraform Destroy') {
     steps {
       sh 'terraform destroy -auto-approve'
