@@ -38,7 +38,7 @@ stages {
       options {
           timeout(time: 5, unit: 'MINUTES')
       }
-    steps {
+       {
       input "Do you want to apply the plan?"
     }
   }
