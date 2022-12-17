@@ -13,18 +13,10 @@ stages {
      git 'https://github.com/bharatbalajid/blue_app.git'
     }
   }
-  stage('Terraform Fmt') {
+  stage('Terraform Init, Fmt & Validate') {
     steps {
       sh 'terraform fmt'
-    }
-  }
-  stage('Terraform Init') {
-    steps {
       sh 'terraform init'
-    }
-  }
-  stage('Terraform Validate') {
-    steps {
       sh 'terraform validate'
     }
   }
@@ -44,6 +36,19 @@ stages {
     stage('Terraform Apply') {
     steps {
       sh 'terraform apply -auto-approve'
+    }
+  }
+  stage('Destroy Aprroval') {
+      options {
+          timeout(time: 300, unit: 'MINUTES')
+      }
+    steps {
+      input "Do you want to destroy the resources created ?"
+    }
+  }
+  stage('Terraform Destroy') {
+    steps {
+      sh 'terraform destroy -auto-approve'
     }
   }
 }
