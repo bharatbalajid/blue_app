@@ -33,7 +33,6 @@ stages {
       sh 'terraform plan'
     }
   }
-  parallel {
   stage('Aprroval') {
       options {
           timeout(time: 5, unit: 'MINUTES')
@@ -41,7 +40,6 @@ stages {
     steps {
       input "Do you want to apply the plan?"
     }
-  }
   }
     stage('Terraform Apply') {
     steps {
@@ -55,6 +53,7 @@ stages {
       input 'Do you want to destroy the resources created ?'
     }
   }
+ }
  stage('Terraform Destroy') {
     steps {
       sh 'terraform destroy -auto-approve'
@@ -62,4 +61,4 @@ stages {
   }
 }
 }
-}
+
