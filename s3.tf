@@ -1,7 +1,7 @@
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = var.bucket
+  bucket = "jai-tcs-${var.tags}"
   acl    = "private"
 
   versioning = {
@@ -12,7 +12,7 @@ module "s3_bucket" {
 module "s3_bucket_1" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = var.bucket
+  bucket = "aravind-infosys-${var.tags}"
   acl    = "private"
 
   versioning = {
