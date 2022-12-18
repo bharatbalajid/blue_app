@@ -3,6 +3,6 @@ variable "region" {
   default = "us-east-1"
 }
 variable "bucket" {
-  type    = list
+  type    = list(string)
   default = ["jai-tcs", "aravind-infosys"]
 }
