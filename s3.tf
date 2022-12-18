@@ -1,7 +1,7 @@
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = "jai-tcs"
+  bucket = "jai-tcs "
   acl    = "private"
 
   versioning = {
