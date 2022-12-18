@@ -7,11 +7,3 @@ variable "bucket" {
   type        = string
   default     = null
 }
-variable "tags" {
-  description = "A mapping of tags to assign to the bucket."
-  type        = map(string)
-  default     = {
-    name = "blue-app"
-    Environment = "test"
-  }
-}
