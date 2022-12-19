@@ -1,14 +1,22 @@
 module "iam_user_1" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-user"
-  count = var.count
+  count = 2
+  users = [
+    {
   name          = "jai"
-  path = var.path
+  path = "/"
   force_destroy = true
-}
-module "iam_user_2" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-user"
-  count = var.count
+  tags = {
+    name = "user-${count.index+1}"
+  }
+},
+{
   name          = "aravind"
-  path = var.path
+  path = "/"
   force_destroy = true
+    tags = {
+    name = "user-${count.index+1}"
+  }
+}
+  ]
 }

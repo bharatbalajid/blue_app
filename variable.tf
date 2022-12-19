@@ -7,13 +7,3 @@ variable "bucket" {
   type        = string
   default     = null
 }
-variable "path" {
-  description = "Desired path for the IAM user"
-  type        = string
-  default     = "/"
-}
-variable "count" {
-  description = "Desired path for the IAM user"
-  type        = number
-  default     = "2"
-}
