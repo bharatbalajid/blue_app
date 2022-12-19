@@ -1,7 +1,7 @@
-module "iam_user_1" {
+module "iam_user" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-user"
-  count = 2
-  users = [
+  count = var.user_count
+   name = [
     {
   name          = "jai"
   path = "/"

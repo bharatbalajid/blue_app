@@ -7,3 +7,7 @@ variable "bucket" {
   type        = string
   default     = null
 }
+variable "user_count" {
+  description = "Number of IAM users to create"
+  default = 2
+}
