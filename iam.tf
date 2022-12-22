@@ -3,7 +3,7 @@ module "iam_user" {
   count = var.user_count
    name = [
     {
-  name          = "jai-ganesh"
+  name          = "jaiganesh"
   path = "/"
   force_destroy = true
   tags = {
