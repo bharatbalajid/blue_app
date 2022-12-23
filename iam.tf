@@ -1,6 +1,5 @@
-module "iam" {
-  source  = "terraform-aws-modules/iam/aws"
-  version = "5.9.2"
+module "iam_user" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-user"
   name          = "jaiganesh"
   path = "/"
   force_destroy = true
