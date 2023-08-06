@@ -8,3 +8,6 @@ variable "bucket" {
   default     = null
 }
 
+variable "jai" {
+  description = "none"
+}
