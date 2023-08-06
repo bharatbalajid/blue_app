@@ -11,3 +11,6 @@ variable "bucket" {
 variable "jai" {
   description = "none"
 }
+variable "balaji"{
+description = "null"
+}
