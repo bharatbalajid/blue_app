@@ -12,3 +12,6 @@ variable "jai" {
   description = "none"
 }
 
+variable "balajis" { 
+  description = "null"
+}
